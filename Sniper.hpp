@@ -3,7 +3,6 @@
 //
 #pragma once
 
-#include "Soldier.hpp"
 #include "SniperCommander.hpp"
 
 class Sniper  : public SniperCommander {
@@ -11,6 +10,7 @@ public:
     Sniper (int x) : SniperCommander(x) {
         this->_power = 50;
         this->_life = 100;
+        this->_initLife = 100;
         this->_isCommander = false;
     }
 

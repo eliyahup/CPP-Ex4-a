@@ -15,14 +15,14 @@
 #include "Soldier.hpp"
 #include "FootCommander.hpp"
 #include "ParamedicCommander.hpp"
+#include "SniperCommander.hpp"
 
 namespace WarGame {
 
     class Board {
     private:
-
-    public:
         std::vector<std::vector<Soldier *>> board;
+    public:
         enum MoveDIR {
             Up, Down, Right, Left
         };
@@ -54,7 +54,12 @@ namespace WarGame {
 
         void moveStep(std::pair<int, int> &source, MoveDIR direction);
 
-        void minDistToAttack(std::pair<int, int> source, int player_number);
+        void minDistAttack(std::pair<int, int> source, int player_number);
+
+        void strongAttact(std::pair<int, int> source, int player_number);
+
+        void health(std::pair<int, int> source, int player_number);
+
     };
 
 }

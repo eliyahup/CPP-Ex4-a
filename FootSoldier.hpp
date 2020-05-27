@@ -10,6 +10,7 @@ public:
     FootSoldier(int x) : FootCommander(x) {
         this->_power = 10;
         this->_life = 100;
+        this->_initLife = 100;
         this->_isCommander = false;
     }
 

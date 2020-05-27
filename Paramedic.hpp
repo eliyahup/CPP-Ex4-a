@@ -10,6 +10,7 @@ public:
     Paramedic(int x) : ParamedicCommander(x) {
         this->_power = 0;
         this->_life = 100;
+        this->_initLife = 100;
         this->_isCommander = false;
     }
 

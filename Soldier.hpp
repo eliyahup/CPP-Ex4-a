@@ -3,12 +3,10 @@
 //
 #pragma once
 
-#include "Board.hpp"
 
 
 class Soldier {
 public:
-
     int _playerNumber;
     int _life, _power, _initLife;
     bool _isCommander;
@@ -23,7 +21,6 @@ public:
     virtual void activate(Soldier &other) const = 0;
 
 };
-
 
 
 
