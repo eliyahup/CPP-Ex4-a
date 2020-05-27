@@ -68,6 +68,14 @@ TEST_CASE ("Test Soldier(not Commanders) ") {
     board.move(1, {1, 2}, Board::MoveDIR::Down); //Sniper -50
             CHECK_FALSE(board.has_soldiers(2));
 
+
+    for (int iRow=0; iRow<4; ++iRow) {
+        for (int iCol=0; iCol<4; ++iCol) {
+            Soldier* soldier = board[{iRow,iCol}];
+            if (soldier)
+                delete soldier;
+        }
+    }
 }
 
 
@@ -213,6 +221,14 @@ TEST_CASE ("Test Soldier with Commanders") {
             CHECK(board[{1, 3}] == nullptr);
 
             CHECK_FALSE(board.has_soldiers(1));
+
+    for (int iRow=0; iRow<8; ++iRow) {
+        for (int iCol=0; iCol<8; ++iCol) {
+            Soldier* soldier = board[{iRow,iCol}];
+            if (soldier)
+                delete soldier;
+        }
+    }
 }
 
 TEST_CASE ("Test check throws") {
@@ -232,4 +248,13 @@ TEST_CASE ("Test check throws") {
             CHECK_THROWS( board.move(1, {1, 0}, Board::MoveDIR::Up));  // The soldier in the source location belongs to the other player.
 
             CHECK_THROWS( board.move(1, {2, 2}, Board::MoveDIR::Up));  //There is no soldier in the source location
+
+
+    for (int iRow=0; iRow<4; ++iRow) {
+        for (int iCol=0; iCol<4; ++iCol) {
+            Soldier* soldier = board[{iRow,iCol}];
+            if (soldier)
+                delete soldier;
+        }
+    }
 }
